@@ -1,0 +1,146 @@
+.nav-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-logo h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nav-user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-username {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.nav-logout {
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.nav-logout:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: white;
+}
+
+.nav-menu {
+  background: white;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-menu-link {
+  padding: 15px 25px;
+  color: #555;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.nav-menu-link:hover {
+  color: #667eea;
+  background: #f8f9fa;
+}
+
+.nav-menu-link.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+  background: #f8f9fa;
+}
+
+.nav-footer {
+  background: #f8f9fa;
+  border-top: 1px solid rgba(102, 126, 234, 0.2);
+  padding: 18px 20px;
+  margin-top: 40px;
+}
+
+.nav-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  color: #5a5a5a;
+  font-size: 14px;
+}
+
+.nav-footer-divider {
+  color: rgba(90, 90, 90, 0.6);
+}
+
+.nav-footer-dev {
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+.nav-footer-note {
+  font-size: 13px;
+  color: #7a7a7a;
+}
+
+@media (max-width: 768px) {
+  .nav-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+  }
+
+  .nav-menu-link {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+  }
+
+  .nav-footer {
+    margin-top: 25px;
+    padding: 15px 10px;
+  }
+
+  .nav-footer-content {
+    font-size: 13px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
