@@ -186,8 +186,16 @@ export const taskService = {
     return response.data;
   },
 
-  assignTask: async (taskId) => {
-    const response = await api.post(`/tasks/${taskId}/assign`);
+  assignTask: async (taskId, assignmentData) => {
+    const hasPayload =
+      assignmentData &&
+      typeof assignmentData === 'object' &&
+      Object.keys(assignmentData).length > 0;
+
+    const response = hasPayload
+      ? await api.post(`/tasks/${taskId}/assign`, assignmentData)
+      : await api.post(`/tasks/${taskId}/assign`);
+
     return response.data;
   },
 

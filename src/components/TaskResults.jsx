@@ -210,6 +210,7 @@ const TaskResults = () => {
             const taskTitle = task.taskTitle || task.TaskTitle || '';
             const taskDescription = task.taskDescription || task.TaskDescription || '';
             const submittedAt = task.submittedAt || task.SubmittedAt;
+            const eventEndDate = task.eventEndDate || task.EventEndDate;
             const notes = task.notes || task.Notes;
             const eventName = task.eventName || task.EventName || '';
             const submittedBy = task.submittedByUsername || task.SubmittedByUsername || '';
@@ -217,6 +218,13 @@ const TaskResults = () => {
             const submittedByDisplay = submittedBy || 'Unknown';
             const createdByDisplay = createdBy || 'Unknown';
             const files = task.files || task.Files || [];
+            
+            const isEndDateValid = () => {
+              const today = new Date();
+              const end = new Date(eventEndDate);
+              return end > today;
+          };
+
             return (
               <div key={taskId || taskTitle} className="result-card">
                 <div className="result-header">
@@ -247,6 +255,8 @@ const TaskResults = () => {
                         const fileName = getFileName(file);
                         const fileSize = getFileSizeValue(file);
                         const contentType = normalizeContentType(file);
+
+                        
                         return (
                           <div key={fileId || fileName} className="file-item">
                             <div className="file-info">
@@ -286,11 +296,14 @@ const TaskResults = () => {
                 )}
 
                 <div className="result-footer">
-                  <span className="created-by">
-                    🛠️ Created by: <strong>{createdByDisplay}</strong>
-                  </span>
+                  {!isEndDateValid() && (
+                    <span className="created-by">
+                    🧑‍🎄 Chris Mom: <strong>{createdByDisplay}</strong>
+                    </span>
+                  )}
+                  
                   <span className="submitted-by">
-                    👤 Submitted by: <strong>{submittedByDisplay}</strong>
+                    👼🏻 Chris Child: <strong>{submittedByDisplay}</strong>
                   </span>
                 </div>
               </div>

@@ -371,7 +371,9 @@ const ChrisChild = () => {
                       <p className="task-assigned">
                         Assigned: {new Date(assignment.assignedAt).toLocaleDateString()}
                       </p>
-
+                      <div className="role-mappings">
+                        <h4>{assignment.eventName}</h4>                          
+                      </div>
                       <div className="task-actions">
                         {assignment.status === 'Pending' && (
                           <button
