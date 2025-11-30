@@ -3,7 +3,7 @@ import axios from 'axios';
 const apiBaseUrl =
   import.meta.env?.VITE_API_URL ??
   (typeof process !== 'undefined' ? process.env?.REACT_APP_API_URL : undefined) ??
-  'https://localhost:58977/api';
+  'https://secretsantaapi-eqms.onrender.com/api';
 
 const api = axios.create({
   baseURL: apiBaseUrl,
